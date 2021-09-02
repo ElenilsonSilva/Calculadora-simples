@@ -8,7 +8,7 @@ namespace calculadora
         {
             var menu = new Menu();
             
-            menu.OpcoesMenu();
+            menu.BoasVindas();
         }
     }
 }

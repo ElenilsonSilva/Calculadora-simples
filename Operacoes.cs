@@ -8,13 +8,9 @@ namespace calculadora
 {
     public class Operacoes
     {
-        public double ParseFloat(int value)
-        {
-            return Convert.ToDouble(value);
-        }
         public string Sum(int value1, int value2)
         {
-            return $"O resultado da soma é {value1 + value2}";
+            return $"O resultado da soma de {value1} + {value2} é {value1 + value2}";
         }
 
         public string Subtraction(int value1, int value2)
@@ -31,5 +27,7 @@ namespace calculadora
         {
             return $"O resultado da multiplicação é {value1 * value2}";
         }
+        
+        
     }
 }
