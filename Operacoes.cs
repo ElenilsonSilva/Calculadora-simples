@@ -10,22 +10,22 @@ namespace calculadora
     {
         public string Sum(int value1, int value2)
         {
-            return $"O resultado da soma de {value1} + {value2} é {value1 + value2}";
+            return $"{value1} + {value2} = {value1 + value2}";
         }
 
         public string Subtraction(int value1, int value2)
         {
-            return $" O resultado da subtração é {value1 - value2}";
+            return $"{value1} - {value2} = {value1 - value2}";
         }
 
         public string Division(double value1, double value2) 
         {
-            return $"O resultado da divisão é {value1 / value2}";
+            return $"{value1} / {value2} = {value1 / value2}";
         }
 
         public string Multiplication(int value1, int value2)
         {
-            return $"O resultado da multiplicação é {value1 * value2}";
+            return $"{value1} * {value2} = {value1 * value2}";
         }
         
         

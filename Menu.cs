@@ -16,9 +16,14 @@ namespace calculadora
 
        public void BoasVindas()
         {
-            Console.WriteLine("BEM VINDO A CALCULADORA");
-            Console.WriteLine("1 - Fazer Operação");
-            Console.WriteLine("2 - Exibir Histórico");
+            Console.WriteLine("\n\n");
+            Console.WriteLine("|------------------------------------------|");
+            Console.WriteLine("|          BEM VINDO A CALCULADORA         |");
+            Console.WriteLine("|------------------------------------------|");
+            Console.WriteLine("|           1 - Fazer Operação             |");
+            Console.WriteLine("|           2 - Exibir Histórico           |");
+            Console.WriteLine("|           3 - Sair                       |");
+            Console.WriteLine("|------------------------------------------|");
             string opcao = Console.ReadLine();
 
             switch(opcao)
@@ -27,14 +32,10 @@ namespace calculadora
                     OpcoesMenu();
                     break;
                 case "2":
-                    Console.WriteLine("Lista");
-                    foreach(var item in historico)
-                    {
-                        Console.WriteLine(item);
-                    }
+                    ExibirHistorico();
                     break;
-                default:
-                    Console.WriteLine("Opção inválido");
+                case "3":
+                    Console.WriteLine("\n            Valeu, até a próxima. :) \n");
                     break;
             }
         }
@@ -48,11 +49,13 @@ namespace calculadora
             
             do
             {
-                Console.WriteLine("Escolha a operação");
-                Console.WriteLine("1 - Adição");
-                Console.WriteLine("2 - Subtração");
-                Console.WriteLine("3 - Divisão");
-                Console.WriteLine("4 - Multiplicação");
+                Console.WriteLine("|------------------------------------------|");
+                Console.WriteLine("|           ESCOLHA A OPERAÇÃO             |");
+                Console.WriteLine("|              1 - Adição                  |");
+                Console.WriteLine("|              2 - Subtração               |");
+                Console.WriteLine("|              3 - Divisão                 |");
+                Console.WriteLine("|              4 - Multiplicação           |");
+                Console.WriteLine("|------------------------------------------|");
                 escolha = Int32.Parse(Console.ReadLine());
            
 
@@ -67,23 +70,40 @@ namespace calculadora
             {
                 case 1:
                     historico.Add(Sum(n1, n2));
-                    Console.WriteLine(Sum(n1, n2));
+                    Console.WriteLine($"\nO resultado da soma de {Sum(n1, n2)}\n");
                     BoasVindas();
                     break;
                 case Subtracao:
-                    Console.WriteLine(Subtraction(n1, n2));                   
+                    historico.Add(Subtraction(n1, n2));
+                    Console.WriteLine($"\nO resultado da subtração de {Subtraction(n1, n2)}\n");
+                    BoasVindas();
                     break;
                 case Divisao:
-                    Console.WriteLine(Division((float)n1, (float)n2));                   
+                    historico.Add(Division(n1, n2));
+                    Console.WriteLine($"\nO resultado da divisão de {Division((float)n1, (float)n2)}\n");
+                    BoasVindas();
                     break;
                 case Multiplicacao:
-                    Console.WriteLine(Multiplication(n1, n2));                 
+                    historico.Add(Multiplication(n1, n2));
+                    Console.WriteLine($"\nO resultado da multiplicação de {Multiplication(n1, n2)}\n");
+                    BoasVindas();
                     break;
                 default:
                     break;
             }
         }
-        
+        public void ExibirHistorico()
+        {
+            Console.WriteLine("|------------------------------------------|");
+            Console.WriteLine("|          Histórico de Operações          |");
+            Console.WriteLine("|------------------------------------------|");
+            foreach (var item in historico)
+            {
+                Console.WriteLine("   "+item+"           ");
+                Console.WriteLine("|------------------------------------------|");
+
+            }
+        }
 
     }
 }
