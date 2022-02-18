@@ -10,21 +10,25 @@ namespace calculadora
     {
         public string Sum(int value1, int value2)
         {
+            Console.Clear();
             return $"{value1} + {value2} = {value1 + value2}";
         }
 
         public string Subtraction(int value1, int value2)
         {
+            Console.Clear();
             return $"{value1} - {value2} = {value1 - value2}";
         }
 
         public string Division(double value1, double value2) 
         {
+            Console.Clear();
             return $"{value1} / {value2} = {value1 / value2}";
         }
 
         public string Multiplication(int value1, int value2)
         {
+            Console.Clear();
             return $"{value1} * {value2} = {value1 * value2}";
         }
         

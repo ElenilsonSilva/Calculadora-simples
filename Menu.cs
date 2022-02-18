@@ -16,6 +16,7 @@ namespace calculadora
 
        public void BoasVindas()
         {
+            Console.Clear();
             Console.WriteLine("\n\n");
             Console.WriteLine("|------------------------------------------|");
             Console.WriteLine("|          BEM VINDO A CALCULADORA         |");
@@ -39,6 +40,7 @@ namespace calculadora
                     break;
             }
         }
+
         public void OpcoesMenu()
         {
             int escolha;
@@ -63,35 +65,44 @@ namespace calculadora
             this.Escolha(escolha, numero1, numero2);
             
             
-        }      
+        }  
+
         public void Escolha(int escolha, int n1, int n2)
         {   
             switch(escolha)
             {
-                case 1:
+                case Adicao:
                     historico.Add(Sum(n1, n2));
                     Console.WriteLine($"\nO resultado da soma de {Sum(n1, n2)}\n");
+                    Console.ReadKey();
                     BoasVindas();
                     break;
+
                 case Subtracao:
                     historico.Add(Subtraction(n1, n2));
                     Console.WriteLine($"\nO resultado da subtração de {Subtraction(n1, n2)}\n");
+                    Console.ReadKey();
                     BoasVindas();
                     break;
+
                 case Divisao:
                     historico.Add(Division(n1, n2));
                     Console.WriteLine($"\nO resultado da divisão de {Division((float)n1, (float)n2)}\n");
+                    Console.ReadKey();
                     BoasVindas();
                     break;
+
                 case Multiplicacao:
                     historico.Add(Multiplication(n1, n2));
                     Console.WriteLine($"\nO resultado da multiplicação de {Multiplication(n1, n2)}\n");
+                    Console.ReadKey();
                     BoasVindas();
                     break;
                 default:
                     break;
             }
         }
+
         public void ExibirHistorico()
         {
             Console.WriteLine("|------------------------------------------|");
@@ -103,6 +114,8 @@ namespace calculadora
                 Console.WriteLine("|------------------------------------------|");
 
             }
+            Console.ReadKey();
+            BoasVindas();
         }
 
     }
